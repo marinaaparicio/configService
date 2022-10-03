@@ -1,7 +1,14 @@
 spring:
-  config:
-    import: configserver:http://localhost:8888
-    
-    
+  application:
+    name: "config-server"
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/marinaaparicio/bootCamp-ConfigServer
+          default-label: main
+          search-paths:
+          - '*.yaml'
+              
 server:
   port: 8888
